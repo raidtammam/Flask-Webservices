@@ -28,7 +28,7 @@ deactivate () {
     fi
 
     unset VIRTUAL_ENV
-    if [ ! "$1" = "nondestructive" ] ; then
+    if [ ! "${1:-}" = "nondestructive" ] ; then
     # Self destruct!
         unset -f deactivate
     fi
@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="D:\RAID TAMMAM\SMK TARUNA BHAKTI\XI RPL 1\sqlPython\env"
+VIRTUAL_ENV="C:\Users\Farras Jibran\Documents\GitHub\Flask-Webservices\flaskApii\env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

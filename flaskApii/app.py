@@ -4,7 +4,7 @@ from flask import jsonify, Flask, render_template, request, json
 
 # pip install simplejson
 from werkzeug.security import generate_password_hash, check_password_hash
-from flaskext.mysql import MySQL
+from flask.ext.mysql import MySQL
 # pip install flask-mysql
 
 project_root = os.path.dirname(__name__)
@@ -34,7 +34,6 @@ def signUp():
     _guru = request.form['guru']
     _ruangan = request.form['ruangan']
     _rfid = request.form['rfid']
-    
 
     if _mapel and _guru and _ruangan and _rfid:
         insert(_mapel, _guru, _ruangan, _rfid)
@@ -73,7 +72,7 @@ def show():
                 'mapel': item[1],
                 'guru': item[2],
                 'kelas': item[3],
-                'rfid' : item[4]
+                'rfid': item[4]
             }
             dataList.append(dataTempObj)
         return jsonify(dataList)
